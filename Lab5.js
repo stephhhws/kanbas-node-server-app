@@ -50,6 +50,12 @@ const Lab5 = (app) => {
       case "subtract":
         result = parseInt(a) - parseInt(b);
         break;
+      case "multiply":
+        result = parseInt(a) * parseInt(b);
+        break;
+      case "divide":
+        result = parseInt(a) / parseInt(b);
+        break;
       default:
         result = "Invalid operation";
     }
@@ -134,7 +140,7 @@ const Lab5 = (app) => {
     const { id } = req.params;
     const todo = todos.find((t) => t.id === parseInt(id));
     if (!todo) {
-      res.status(404).json({ message: `Unable to delete Todo with ID ${id}` });
+      res.status(404).json({ message: `Unable to update Todo with ID ${id}` });
       return;
     }
     todo.title = req.body.title;
