@@ -10,7 +10,9 @@ import UserRoutes from "./Users/routes.js";
 import session from "express-session";
 import "dotenv/config";
 
-mongoose.connect("mongodb://localhost:27017/kanbas");
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas'
+
+mongoose.connect(CONNECTION_STRING);
 
 const app = express();
 app.use(
@@ -45,3 +47,5 @@ Hello(app);
 Lab5(app);
 UserRoutes(app);
 app.listen(4000);
+// 4JvMfL1Kv3s7uAri
+// mongodb+srv://swstep0826au:<password>@cluster0.mitfbkr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
